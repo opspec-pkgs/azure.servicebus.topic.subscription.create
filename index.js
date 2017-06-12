@@ -11,12 +11,12 @@ const options = {
     EnableDeadLetteringOnFilterEvaluationExceptions: (process.env.enableDeadLetteringOnFilterEvalException === 'true')
 };
 
-serviceBusService.createSubscriptionIfNotExists(
+serviceBusService.createSubscription(
     process.env.topicName,
     process.env.subscriptionName,
     options,
     error => {
-        if (error) {
+        if (error && error.statusCode !== 409) {
             throw error;
         }
         // Subscription was created or exists

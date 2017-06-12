@@ -45,7 +45,7 @@ run:
       - sh
       - -ce
       - |
-        npm link azure
+        npm link azure-sb
         node index.js
     files: { /index.js }
     envVars:
