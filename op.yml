@@ -1,0 +1,59 @@
+name: azure.servicebus.topic.subscription.create
+description: creates an azure servicebus topic subscription (if it doesn't already exist)
+inputs:
+  connectionString:
+    string:
+      constraints: { minLength: 1 }
+      description: connection string of servicebus
+      isSecret: true
+  topicName:
+    string:
+      constraints: { minLength: 1 }
+  subscriptionName:
+    string:
+      constraints: { minLength: 1 }
+  defaultMsgTtl:
+    string:
+      constraints: { minLength: 1 }
+      description: default msg TTL (as iso 8601 duration) for the provisioned subscription specified as an iso 8601 duration
+      default: PT336H
+  lockDuration:
+    string:
+      constraints: { minLength: 1 }
+      description: default lock duration (as iso 8601 duration) for the provisioned subscription
+      default: PT30S
+  enableSessions:
+    string:
+      constraints: { enum: ['true', 'false']}
+      description: whether sessions will be enabled for the provisioned subscription
+      default: 'false'
+  enableDeadLetteringOnMsgExp:
+    string:
+      constraints: { enum: ['true', 'false']}
+      description: whether dead lettering on msg expiration will be enabled for the provisioned subscription
+      default: 'true'
+  enableDeadLetteringOnFilterEvalException:
+    string:
+      constraints: { enum: ['true', 'false']}
+      description: whether dead lettering on filter evaluation exceptions will be enabled for the provisioned subscription
+      default: 'true'
+version: 1.0.0
+run:
+  container:
+    image: { ref: 'opspecpkgs/azure.servicebus.topic.subscription.create:1.0.0' }
+    cmd:
+      - sh
+      - -ce
+      - |
+        npm link azure
+        node index.js
+    files: { /index.js }
+    envVars:
+      connectionString:
+      topicName:
+      subscriptionName:
+      defaultMsgTtl:
+      lockDuration:
+      enableSessions:
+      enableDeadLetteringOnMsgExp:
+      enableDeadLetteringOnFilterEvalException:
