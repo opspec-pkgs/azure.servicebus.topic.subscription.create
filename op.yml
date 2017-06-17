@@ -8,7 +8,7 @@ inputs:
   location:
     string:
       constraints: { minLength: 1 }
-      description: location for the provisioned queue
+      description: location for the provisioned subscription
       default: westus
   loginId:
     string:
@@ -26,11 +26,11 @@ inputs:
   name:
     string:
       constraints: { minLength: 1 }
-      description: name for the provisioned queue
+      description: name for the provisioned subscription
   namespace:
     string:
       constraints: { minLength: 1 }
-      description: namespace of the provisioned queue
+      description: namespace of the provisioned subscription
   resourceGroup:
     string:
       constraints: { minLength: 1 }
@@ -38,16 +38,16 @@ inputs:
   topic:
     string:
       constraints: { minLength: 1 }
-      description: topic of the provisioned queue
+      description: topic of the provisioned subscription
   autoDeleteOnIdle:
     string:
       constraints: { minLength: 1 }
-      description: idle duration after which to delete the provisioned queue
+      description: idle duration after which to delete the provisioned subscription
       default: 10675199.02:48:05.4775807
   defaultMessageTimeToLive:
     string:
       constraints: { minLength: 1 }
-      description: default msg TTL for the provisioned queue specified as an iso 8601 duration
+      description: default msg TTL for the provisioned subscription
       default: 14.00:00:00
   deadLetteringOnFilterEvaluationExceptions:
     string:
@@ -57,12 +57,12 @@ inputs:
   deadLetteringOnMessageExpiration:
     string:
       constraints: { enum: ['true', 'false']}
-      description: whether dead lettering of expired msgs will be enabled for the provisioned queue
+      description: whether dead lettering of expired msgs will be enabled for the provisioned subscription
       default: 'false'
   enableBatchedOperations:
     string:
       constraints: { enum: ['true', 'false']}
-      description: whether batched operations will be enabled for the provisioned queue
+      description: whether batched operations will be enabled for the provisioned subscription
       default: 'true'
   isReadOnly:
     string:
@@ -82,12 +82,12 @@ inputs:
   maxDeliveryCount:
     number:
       constraints: { format: integer, minimum: 1 }
-      description: number of times msg delivery will be attempted for the provisioned queue
+      description: number of times msg delivery will be attempted for the provisioned subscription
       default: 10
   requiresSession:
     string:
       constraints: { enum: ['true', 'false']}
-      description: whether duplicate detection will be enabled for the provisioned queue
+      description: whether duplicate detection will be enabled for the provisioned subscription
       default: 'false'
 version: 2.0.0
 run:
