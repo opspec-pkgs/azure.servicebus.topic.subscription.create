@@ -24,12 +24,25 @@ run:
   op:
     pkg: { ref: github.com/opspec-pkgs/azure.servicebus.topic.subscription.create#VERSION }
     inputs: 
-      connectionString:
-      topicName:
-      subscriptionName:
-      defaultMsgTtl:
+      subscriptionId:
+      location:
+      loginId:
+      loginSecret:
+      loginTenantId:
+      name:
+      namespace:
+      resourceGroup:
+      topic:
+      # begin optional args
+      autoDeleteOnIdle:
+      defaultMessageTimeToLive:
+      deadLetteringOnFilterEvaluationExceptions:
+      deadLetteringOnMessageExpiration:
+      enableBatchedOperations:
+      isReadOnly:
       lockDuration:
-      enableSessions:
-      enableDeadLetteringOnMsgExp:
-      enableDeadLetteringOnFilterEvalException:
+      loginType:
+      maxDeliveryCount:
+      requiresSession:
+      # end optional args
 ```
