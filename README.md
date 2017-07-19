@@ -20,31 +20,30 @@ opctl run github.com/opspec-pkgs/azure.servicebus.topic.subscription.create#VERS
 ## compose
 
 ```yaml
-run:
-  op:
-    pkg: { ref: github.com/opspec-pkgs/azure.servicebus.topic.subscription.create#VERSION }
-    inputs: 
-      subscriptionId:
-      location:
-      loginId:
-      loginSecret:
-      loginTenantId:
-      name:
-      namespace:
-      resourceGroup:
-      topic:
-      # begin optional args
-      autoDeleteOnIdle:
-      defaultMessageTimeToLive:
-      deadLetteringOnFilterEvaluationExceptions:
-      deadLetteringOnMessageExpiration:
-      enableBatchedOperations:
-      isReadOnly:
-      lockDuration:
-      loginType:
-      maxDeliveryCount:
-      requiresSession:
-      # end optional args
+op:
+  pkg: { ref: github.com/opspec-pkgs/azure.servicebus.topic.subscription.create#VERSION }
+  inputs: 
+    subscriptionId:
+    location:
+    loginId:
+    loginSecret:
+    loginTenantId:
+    name:
+    namespace:
+    resourceGroup:
+    topic:
+    # begin optional args
+    autoDeleteOnIdle:
+    defaultMessageTimeToLive:
+    deadLetteringOnFilterEvaluationExceptions:
+    deadLetteringOnMessageExpiration:
+    enableBatchedOperations:
+    isReadOnly:
+    lockDuration:
+    loginType:
+    maxDeliveryCount:
+    requiresSession:
+    # end optional args
 ```
 
 # Support
