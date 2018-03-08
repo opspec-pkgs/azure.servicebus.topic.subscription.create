@@ -89,10 +89,10 @@ inputs:
       constraints: { enum: ['true', 'false']}
       description: whether duplicate detection will be enabled for the provisioned subscription
       default: 'false'
-version: 2.0.0
+version: 2.1.0
 run:
   container:
-    image: { ref: 'opspecpkgs/azure.servicebus.topic.create:2.0.0' }
+    image: { ref: 'opspecpkgs/azure.servicebus.topic.create:2.1.0' }
     cmd: [node, /index.js]
     files: { /index.js }
     envVars:
